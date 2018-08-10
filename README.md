@@ -3,7 +3,7 @@
 - [X] spin up server
 - [X] set up base html
 - [X] source in AngularJS
-- [ ] input field and button to create task
+- [X] input field and button to create task
 - [ ] POST task to database (MongoDB)
 - [ ] GET to refresh list on DOM
 - [ ] check box for complete - booleann- 
