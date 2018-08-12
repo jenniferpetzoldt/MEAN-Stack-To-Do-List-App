@@ -18,6 +18,20 @@
             <input type="text" ng-model="lc.taskIn" placeholder="e.g. vacuum">
             <button type="submit" ng-click="lc.sendTaskToServer()"> Add To List</button>
         </div>
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Completed</th>
+                </tr>
+            </thead>
+            <tbody id="tasks-output">
+                <tr ng-repeat="task in lc.listData">
+                    <td>{{task.task}}</td>
+                    <td><input type="checkbox" ng-model="task.complete"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 

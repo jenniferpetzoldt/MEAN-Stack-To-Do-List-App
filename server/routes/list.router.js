@@ -26,10 +26,14 @@ router.post('/', (req, res)=>{
     });
 });
 
-// router.get('/outback', (req, res)=>{
-//     res.send(List);
-// }).catch((error)=>{
-//     res.sendStatus(500);
-// })
+router.get('/', (req, res)=>{
+    console.log('/list GET hit');
+    List.find({}).then((foundTasks)=>{
+    res.send(foundTasks);
+    console.log(foundTasks);
+}).catch((error)=>{
+    res.sendStatus(500);
+});
+})
 
 module.exports = router;
