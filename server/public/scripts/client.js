@@ -23,5 +23,16 @@ listApp.controller('ListController', function ($http) {
         });//end POST
         vm.taskIn = '';
     }//end sendTaskToServer
+vm.getListFromServer = function () {
+    console.log('ingetListFromServer');
+    $http({
+        method: 'GET',
+        url: '/list'
+    }).then(function(response){
+        vm.listData = response.data;
+    }).catch(function(error){
+        alert('unabel to get task list');
+    });
+}
 
 });

@@ -4,7 +4,7 @@
 - [X] set up base html
 - [X] source in AngularJS
 - [X] input field and button to create task
-- [ ] POST task to database (MongoDB)
+- [X] POST task to database (MongoDB)
 - [ ] GET to refresh list on DOM
 - [ ] check box for complete - booleann- 
     - [ ] ng-class - make it look different

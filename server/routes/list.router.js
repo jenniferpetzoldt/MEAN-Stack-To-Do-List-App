@@ -26,5 +26,10 @@ router.post('/', (req, res)=>{
     });
 });
 
+// router.get('/outback', (req, res)=>{
+//     res.send(List);
+// }).catch((error)=>{
+//     res.sendStatus(500);
+// })
 
 module.exports = router;
