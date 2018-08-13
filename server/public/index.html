@@ -30,7 +30,7 @@
                 <tr ng-repeat="task in lc.listData" ng-class="task.complete ? 'strike' : 'not-strike'">
                     <td>{{task.task}}</td>
                     <td>
-                        <input type="checkbox" ng-model="task.complete">
+                        <input class="checkbox" type="checkbox" ng-model="task.complete">
                     </td>
                 </tr>
             </tbody>
