@@ -1,16 +1,40 @@
-# Weekend-Challenge-3
+# MEAN Stack To Do List App
+This is an App to track tasks which need to be completed. As well as whether or not the tasks have been completed. Tasks can be deleted from the list and unmarked.
 
-- [X] spin up server
-- [X] set up base html
-- [X] source in AngularJS
-- [X] input field and button to create task
-- [X] POST task to database (MongoDB)
-- [X] GET to refresh list on DOM
-- [X] check box for complete - booleann- 
-    - [X] ng-class - make it look different
-- [X] Delete button 
-    - [X]removes task from database and DOM
-- [X] CSS
-    - [X] background color
-    - [X] font family and size
-- [X] text color & || background color of tasks to show whether or not they have been completed
+## Built With
+* MongoDB
+* Express
+* AngularJS
+* Node.js
+* HTML
+* CSS
+
+## Getting Started
+These instructions will create a copy of the project for you to utilize on your local machine for development and testing purposes. See deployment notes on how to deploy the project on a live system.
+
+### Installing
+Steps to get the develoment environment running.
+
+1. Download this project.
+2. ```npm install```
+3. ```npm start```
+4. Open within your code editing tool.
+
+## Screen Shot
+
+### Completed Features
+- [ ] Added tasks are stored in a database through MongoDB 
+- [ ] When tasks are clicked the text is crossed out to indicate completion of the task
+- [ ] Delete button will remove tasks from the list as well as the database
+
+### Next Steps
+Features to be added:
+- [ ] Ability to add notes when entering task
+- [ ] Indication of importance
+- [ ] Ability to sort tasks
+    - [ ] By importance
+    - [ ] Alphabetically
+
+
+## Authors
+* Jennifer Petzoldt

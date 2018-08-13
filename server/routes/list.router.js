@@ -12,11 +12,11 @@ const List = mongoose.model('Lists', TaskSchema);
 
 let list = [];
 
-router.delete('/:id', (req, res)=> {
-    List.findByIdAndRemove(req.params.id).then((response)=> {
+router.delete('/:id', (req, res) => {
+    List.findByIdAndRemove(req.params.id).then((response) => {
         res.sendStatus(200);
         console.log('/list DELETE hit');
-    }).catch((error)=> {
+    }).catch((error) => {
         res.sendStatus(500);
         console.log(error);
     });
@@ -46,16 +46,23 @@ router.post('/', (req, res) => {
     });
 });//end post
 
-router.put('/taskComplete/:id', (req, res)=>{
-    console.log(foundTask);
-    foundTask.complete = true;
-    foundTask.save().then((response)=>{
-        res.sendStatus(200);
-        console.log('foundTask adjusted');
-    }).catch((error)=>{
-        res.sendStatus(500);
-        console.log('error', error);
-    });
+router.put('/taskComplete/:id', (req, res) => {
+    console.log('update', req.params.id);
+    List.findOne({ _id: req.params.id })
+        .then((foundTask) => {
+            console.log('found task:', foundTask);
+            foundTask.completed = !foundTask.completed;
+            foundTask.save().then((response) => {
+                res.sendStatus(200);
+                console.log('foundTask adjusted', foundTask);
+            }).catch((error) => {
+                res.sendStatus(500);
+                console.log('error with findOne', error);
+            });
+        }).catch((error) => {
+            res.sendStatus(500);
+            console.log('error with PUT', error)
+        });
 })//end put
 
 module.exports = router;

@@ -21,9 +21,9 @@ listApp.controller('ListController', function ($http) {
     vm.completeTask = function(taskId){
         $http({
             method: 'PUT',
-            url: '/list/taskComplete/' + repairId
+            url: '/list/taskComplete/' + taskId
         }).then(function(response){
-            getListFromServer();
+           getListFromServer();
         }).catch(function(error){
             alert('unable to adjust value')
         })
