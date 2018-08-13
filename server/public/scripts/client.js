@@ -54,6 +54,7 @@ listApp.controller('ListController', function ($http) {
             method: 'DELETE',
             url: '/list/' + taskId
         }).then(function(response){
+            console.log('in deleteTask');
             getListFromServer();
         }).catch(function(error){
             alert('unable to delete');

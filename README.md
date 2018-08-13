@@ -8,8 +8,8 @@
 - [X] GET to refresh list on DOM
 - [X] check box for complete - booleann- 
     - [X] ng-class - make it look different
-- [ ] delete button 
-    - [ ]removes task from database and DOM
+- [X] Delete button 
+    - [X]removes task from database and DOM
 - [X] CSS
     - [X] background color
     - [X] font family and size

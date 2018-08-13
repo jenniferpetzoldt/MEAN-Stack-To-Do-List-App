@@ -15,8 +15,10 @@ let list = [];
 router.delete('/:id', (req, res)=> {
     List.findByIdAndRemove(req.params.id).then((response)=> {
         res.sendStatus(200);
+        console.log('/list DELETE hit');
     }).catch((error)=> {
         res.sendStatus(500);
+        console.log(error);
     });
 })//end delete
 
