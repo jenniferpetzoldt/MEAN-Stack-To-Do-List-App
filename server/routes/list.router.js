@@ -12,6 +12,24 @@ const List = mongoose.model('Lists', TaskSchema);
 
 let list = [];
 
+router.delete('/:id', (req, res)=> {
+    List.findByIdAndRemove(req.params.id).then((response)=> {
+        res.sendStatus(200);
+    }).catch((error)=> {
+        res.sendStatus(500);
+    });
+})//end delete
+
+router.get('/', (req, res) => {
+    console.log('/list GET hit');
+    List.find({}).then((foundTasks) => {
+        res.send(foundTasks);
+        console.log(foundTasks);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
+})//end get
+
 router.post('/', (req, res) => {
     console.log('/list POST');
     console.log(req.body);
@@ -24,17 +42,7 @@ router.post('/', (req, res) => {
         console.log(error);
         res.sendStatus(500);
     });
-});
-
-router.get('/', (req, res) => {
-    console.log('/list GET hit');
-    List.find({}).then((foundTasks) => {
-        res.send(foundTasks);
-        console.log(foundTasks);
-    }).catch((error) => {
-        res.sendStatus(500);
-    });
-})
+});//end post
 
 router.put('/taskComplete/:id', (req, res)=>{
     console.log(foundTask);
@@ -46,6 +54,6 @@ router.put('/taskComplete/:id', (req, res)=>{
         res.sendStatus(500);
         console.log('error', error);
     });
-})
+})//end put
 
 module.exports = router;
