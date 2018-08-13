@@ -5,6 +5,29 @@ listApp.controller('ListController', function ($http) {
     vm.listData = [];
     getListFromServer();
 
+    function getListFromServer() {
+        console.log('in getListFromServer');
+        $http({
+            method: 'GET',
+            url: '/list'
+        }).then(function (response) {
+            vm.listData = response.data;
+            console.log(vm.listData);
+        }).catch(function (error) {
+            alert('unabel to get task list');
+        });
+    }//end getListFromServer
+
+    vm.completeTask = function(taskId){
+        $http({
+            method: 'PUT',
+            url: '/list/taskComplete/' + repairId
+        }).then(function(response){
+            getListFromServer();
+        }).catch(function(error){
+            alert('unable to adjust value')
+        })
+    }//end completeTask
 
     vm.sendTaskToServer = function () {
         console.log('in sendTaskToServer');
@@ -26,27 +49,14 @@ listApp.controller('ListController', function ($http) {
         vm.taskIn = '';
     }//end sendTaskToServer
 
-    function getListFromServer() {
-        console.log('in getListFromServer');
+    vm.deleteTask = function(taskId){
         $http({
-            method: 'GET',
-            url: '/list'
-        }).then(function (response) {
-            vm.listData = response.data;
-            console.log(vm.listData);
-        }).catch(function (error) {
-            alert('unabel to get task list');
-        });
-    }
-
-    vm.completeTask = function(taskId){
-        $http({
-            method: 'PUT',
-            url: '/list/taskComplete/' + repairId
+            method: 'DELETE',
+            url: '/list/' + taskId
         }).then(function(response){
             getListFromServer();
         }).catch(function(error){
-            alert('unable to adjust value')
-        })
-    }
+            alert('unable to delete');
+        });
+    }//end elete task
 });

@@ -24,6 +24,7 @@
                 <tr>
                     <th>Task</th>
                     <th>Completed</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody id="tasks-output">
@@ -32,6 +33,7 @@
                     <td>
                         <input class="checkbox" type="checkbox" ng-model="task.complete">
                     </td>
+                    <td><button ng-click="vm.deleteTask(task._id)">Delete</button></td>
                 </tr>
             </tbody>
         </table>
