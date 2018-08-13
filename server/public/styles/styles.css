@@ -22,6 +22,7 @@ html, body {
 
 h1 {
     text-align: center;
+    font-size: 350%
 }
 table {
     width: 50%;
@@ -37,7 +38,7 @@ td, th{
 
 thead {
     text-decoration: underline;
-    font-size: 110%;
+    font-size: 140%;
 }
 
 tr:hover {
