@@ -1,0 +1,46 @@
+* {
+    box-sizing: boarder-box;
+}
+
+button {
+    background-color: #EEC9C8;
+    border-radius: 3px;
+}
+
+input {
+    margin-bottom: 2%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #DF9C9D;
+}
+
+h1 {
+    text-align: center;
+}
+table {
+    width: 50%;
+}
+
+td, th{
+    width: 30%;
+    text-align: center;
+    word-spacing: 2px;
+    margin-left: 33%;
+    border-bottom: 1px solid #EEC9C8;
+}
+
+thead {
+    text-decoration: underline;
+}
+
+tr:hover {
+    background-color: #EEC9C8;
+}
+
+.strike {
+    text-decoration: line-through;
+}
