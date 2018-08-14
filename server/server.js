@@ -12,7 +12,7 @@ app.use(express.static('server/public'));
 app.use('/list', listRouter);
 
 //globals
-const port = process.env.PORT || 5000;
+const port = process.env.MONGODB_URI || 5000;
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb://localhost:27017/lists';
 
