@@ -20,8 +20,6 @@ Steps to get the develoment environment running.
 3. ```npm start```
 4. Open within your code editing tool.
 
-## Screen Shot
-
 ### Completed Features
 - [ ] Added tasks are stored in a database through MongoDB 
 - [ ] When tasks are clicked the text is crossed out to indicate completion of the task
